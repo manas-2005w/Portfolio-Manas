@@ -8,8 +8,9 @@ export function initHeroCanvas(containerId) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-  camera.position.z = 7;
-  camera.position.y = 0.5;
+  const isMobile = container.clientWidth < 768;
+  camera.position.z = isMobile ? 8.5 : 7;
+  camera.position.y = isMobile ? 0.3 : 0.5;
 
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -147,7 +148,10 @@ export function initHeroCanvas(containerId) {
   // Resize handler
   function handleResize() {
     if (!container) return;
+    const isMob = container.clientWidth < 768;
     camera.aspect = container.clientWidth / container.clientHeight;
+    camera.position.z = isMob ? 8.5 : 7;
+    camera.position.y = isMob ? 0.3 : 0.5;
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
   }

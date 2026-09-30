@@ -56,33 +56,33 @@ export function initFloatingSkills() {
   const mobileTrajectories = [
     // Card 1: Backend & APIs (Upper)
     {
-      start: { x: -4, y: -22, z: 10, rotX: 1,  rotY: 1,  rotZ: -2, scale: 0.95 },
-      mid:   { x: 0,  y: -20, z: 15, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.97 },
-      end:   { x: 3,  y: -21, z: 10, rotX: -1, rotY: -1, rotZ: 2,  scale: 0.95 }
+      start: { x: 0, y: -24, z: 10, rotX: 1,  rotY: 1,  rotZ: -1, scale: 0.95 },
+      mid:   { x: 0, y: -20, z: 15, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.97 },
+      end:   { x: 0, y: -22, z: 10, rotX: -1, rotY: -1, rotZ: 1,  scale: 0.95 }
     },
     // Card 2: Programming
     {
-      start: { x: -6, y: 17,  z: -5, rotX: -1, rotY: 1,  rotZ: 2,  scale: 0.94 },
-      mid:   { x: -2, y: 19,  z: 0,  rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.96 },
-      end:   { x: -5, y: 18,  z: -5, rotX: 1,  rotY: -1, rotZ: -2, scale: 0.94 }
+      start: { x: 0, y: 15,  z: -5, rotX: -1, rotY: 1,  rotZ: 1,  scale: 0.94 },
+      mid:   { x: 0, y: 18,  z: 0,  rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.96 },
+      end:   { x: 0, y: 16,  z: -5, rotX: 1,  rotY: -1, rotZ: -1, scale: 0.94 }
     },
     // Card 3: Databases
     {
-      start: { x: 4,  y: -33, z: 5,  rotX: 1,  rotY: -1, rotZ: -2, scale: 0.93 },
-      mid:   { x: 0,  y: -31, z: 10, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.95 },
-      end:   { x: 4,  y: -32, z: 5,  rotX: -1, rotY: 1,  rotZ: 2,  scale: 0.93 }
+      start: { x: 0, y: -36, z: 5,  rotX: 1,  rotY: -1, rotZ: -1, scale: 0.93 },
+      mid:   { x: 0, y: -32, z: 10, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.95 },
+      end:   { x: 0, y: -34, z: 5,  rotX: -1, rotY: 1,  rotZ: 1,  scale: 0.93 }
     },
     // Card 4: Frontend / App Dev
     {
-      start: { x: 6,  y: 28,  z: -10, rotX: -1, rotY: -1, rotZ: 2,  scale: 0.94 },
-      mid:   { x: 2,  y: 30,  z: -5,  rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.96 },
-      end:   { x: 5,  y: 29,  z: -10, rotX: 1,  rotY: 1,  rotZ: -2, scale: 0.94 }
+      start: { x: 0, y: 28,  z: -10, rotX: -1, rotY: -1, rotZ: 1,  scale: 0.94 },
+      mid:   { x: 0, y: 30,  z: -5,  rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.96 },
+      end:   { x: 0, y: 29,  z: -10, rotX: 1,  rotY: 1,  rotZ: -1, scale: 0.94 }
     },
     // Card 5: Developer Tools
     {
-      start: { x: -3, y: 39,  z: 5,  rotX: 1,  rotY: -1, rotZ: -2, scale: 0.93 },
-      mid:   { x: 1,  y: 41,  z: 10, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.95 },
-      end:   { x: -2, y: 40,  z: 5,  rotX: -1, rotY: 1,  rotZ: 2,  scale: 0.93 }
+      start: { x: 0, y: 40,  z: 5,  rotX: 1,  rotY: -1, rotZ: -1, scale: 0.93 },
+      mid:   { x: 0, y: 42,  z: 10, rotX: 0,  rotY: 0,  rotZ: 0,  scale: 0.95 },
+      end:   { x: 0, y: 41,  z: 5,  rotX: -1, rotY: 1,  rotZ: 1,  scale: 0.93 }
     }
   ];
 
@@ -117,12 +117,18 @@ export function initFloatingSkills() {
     const rawProgress = currentScroll / totalScroll;
     const progress = Math.max(0, Math.min(1, rawProgress));
 
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      cards.forEach((card) => {
+        card.style.transform = "";
+      });
+      return;
+    }
+
     // Only update when scroll changes
     if (Math.abs(progress - currentProgress) > 0.0001) {
       currentProgress = progress;
-
-      const isMobile = window.innerWidth < 768;
-      const trajectories = isMobile ? mobileTrajectories : desktopTrajectories;
+      const trajectories = desktopTrajectories;
 
       cards.forEach((card, idx) => {
         const traj = trajectories[idx];

@@ -126,10 +126,10 @@ section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: calc(var(--header-height) + 40px);
-  padding-bottom: 40px;
+  padding-top: calc(var(--header-height) + 20px);
+  padding-bottom: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -151,9 +151,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: auto;
-  margin-bottom: 50px;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 24px;
   width: 100%;
   padding: 0 20px;
 }
@@ -592,27 +592,53 @@ section {
 
 @media (max-width: 768px) {
   .hero-identity-name {
-    font-size: clamp(36px, 10vw, 52px);
-    letter-spacing: 0.03em;
-    margin-bottom: 10px;
+    font-size: clamp(28px, 8.5vw, 54px);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    text-align: center;
+    width: 100%;
+    word-break: keep-all;
+    line-height: 1.1;
   }
   .hero-identity-header {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 18px;
+    padding: 0 10px;
+  }
+  .hero-content {
+    padding: 0 16px;
+    margin-bottom: 24px;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-badge-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
   }
   .skills-section {
-    height: 125vh;
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 0;
   }
   .skills-central-content {
-    max-width: 90vw;
+    max-width: 92vw;
+    padding: 0 12px;
+    text-align: center;
   }
   .floating-glass-card {
-    width: clamp(230px, 78vw, 270px);
+    width: clamp(230px, 86vw, 310px);
     padding: 16px 14px;
     gap: 10px;
     border-radius: 16px;
   }
   .glass-card-title {
-    font-size: 16px;
+    font-size: 15px;
   }
   .glass-badge {
     padding: 3px 7px;
@@ -1446,19 +1472,37 @@ section {
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+  .header-brand {
+    font-size: 11px;
+  }
+  .header-nav {
+    gap: 10px;
   }
   .header-nav .nav-link.hide-mobile {
     display: none;
   }
-  .about-section, .services-section, .how-we-work-section, .how-we-sprint-section, .pool-rules-section, .faq-section {
-    padding: 100px 20px;
+  .btn-hire {
+    padding: 6px 12px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .about-section, .services-section, .how-we-work-section, .how-we-sprint-section, .pool-rules-section, .faq-section, .before-after-section {
+    padding: 70px 16px;
+  }
+  .about-section {
+    border-radius: 32px 32px 0 0;
+    margin-top: -24px;
+  }
+  .section-divider {
+    padding: 0 16px;
   }
   .pool-rules-manifesto {
-    padding: 40px 24px;
+    padding: 30px 18px;
   }
   .stat-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .budget-pills {
     grid-template-columns: 1fr;
@@ -1477,5 +1521,145 @@ section {
   .resume-viewer-container {
     padding: 8px;
     max-height: 70vh;
+  }
+  .viewport-glow-frame {
+    box-shadow: inset 0 0 30px rgba(0, 30, 80, 0.15), inset 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+
+/* Dedicated Mobile Precision Overrides (Screen Width <= 768px) */
+@media (max-width: 768px) {
+  /* SECTION: TECHNICAL CAPABILITIES */
+  .skills-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 16px !important;
+  }
+
+  .skills-sticky-viewport {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .skills-central-content {
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    margin-bottom: 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  .floating-cards-stage {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    transform: none !important;
+    transform-style: flat !important;
+    margin-top: 8px !important;
+  }
+
+  .floating-glass-card {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* SECTION: HERO SPACING FIX */
+  .hero-section {
+    min-height: calc(100vh - 40px) !important;
+    padding-top: calc(var(--header-height) + 12px) !important;
+    padding-bottom: 16px !important;
+    justify-content: center !important;
+  }
+
+  .hero-content {
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    padding: 0 16px !important;
+  }
+
+  /* SECTION: SELECTED WORK / SPRINT INTERFACE (ALL 4 BUTTONS VISIBLE, NO SCROLLING) */
+  .sprint-interface-container {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    padding: 16px 12px !important;
+    gap: 16px !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+  }
+
+  .sprint-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-right: 0 !important;
+    padding-bottom: 12px !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .sprint-sidebar-header {
+    display: flex !important;
+    padding: 4px 2px 8px !important;
+    font-size: 12px !important;
+    color: var(--text-gray) !important;
+  }
+
+  .sprint-phase-tab {
+    flex-shrink: 1 !important;
+    width: 100% !important;
+    padding: 9px 12px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    border-radius: 10px !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+  }
+
+  .sprint-display-panel {
+    padding: 0 !important;
+    gap: 16px !important;
+  }
+
+  .sprint-corner-box {
+    padding: 20px 16px !important;
+    border-radius: 14px !important;
+  }
+
+  .sprint-display-title {
+    font-size: 22px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .sprint-display-desc {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  .sprint-artwork-frame {
+    height: 220px !important;
+    border-radius: 12px !important;
   }
 }
