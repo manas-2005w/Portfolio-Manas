@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Exact GT Flexa Mono & Suisse Intl Custom Fonts */
+@font-face {
+  font-family: "Suisse Int'l Regular";
+  src: url("https://framerusercontent.com/assets/L3CN4MLCZQeuh9BjpUboN92cIXE.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Suisse Int'l Semi Bold";
+  src: url("https://framerusercontent.com/assets/1hjQNHJFGTyl9xNHER8Kk9vLGk.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Suisse Int'l Light";
+  src: url("https://framerusercontent.com/assets/Ald5la8CrtyErawh6tLZvKKZoI.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "GT Flexa Mono Trial";
+  src: url("https://framerusercontent.com/assets/oecp3EK2vRvnJWC4mKH5gfS6fLY.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "GT Flexa Mono Trial Md";
+  src: url("https://framerusercontent.com/assets/bytIjhUjhiCYHWtmBe4nrOXxwJM.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+:root {
+  --bg-black: #000000;
+  --bg-dark: #0a0a0a;
+  --bg-surface: #151515;
+  --bg-card: #151515;
+  --bg-card-hover: #1c1c1c;
+  --bg-red-pill: #f44849;
+  --bg-red-pill-hover: #ff3b3c;
+  --bg-red-faq: #f44849;
+  --bg-red-faq-dark: #e6393a;
+
+  --text-white: #f4f1ee;
+  --text-pure-white: #ffffff;
+  --text-light-gray: #b0aba5;
+  --text-gray: #888888;
+  --text-dark-gray: #525252;
+  --text-muted: #3d3d3d;
+  --text-dim: #262626;
+
+  --accent-red: #f44849;
+  --accent-orange: #ff4c24;
+  --accent-orange-bright: #ff5731;
+
+  --border-subtle: #262626;
+  --border-muted: #3d3d3d;
+  --border-line: #525252;
+  --border-light: rgba(244, 241, 238, 0.15);
+
+  --font-sans: "Suisse Int'l Regular", "Geist", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans-bold: "Suisse Int'l Semi Bold", "Geist", "Inter", sans-serif;
+  --font-sans-light: "Suisse Int'l Light", "Geist", "Inter", sans-serif;
+  --font-mono: "GT Flexa Mono Trial", "Space Mono", "JetBrains Mono", monospace;
+  --font-mono-md: "GT Flexa Mono Trial Md", "Space Mono", monospace;
+
+  --header-height: 72px;
+  --max-width: 1440px;
+  --section-padding: 120px 40px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
